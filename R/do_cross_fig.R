@@ -9,7 +9,7 @@ n.lines <- 80
 bgcolor <- broman::brocolors("bg")
 color <- qtl2plot::CCcolors
 
-pdf("../Figs/do_cross.pdf", width=9.75, height=6.5, pointsize=16, onefile=TRUE)
+pdf("../Figs/do_cross.pdf", width=9.75, height=6.5, pointsize=16)
 if(black_background) {
     par(mar=rep(0.1,4),las=1,fg="white",col="white",col.axis="white",col.lab="white",
         bg=bgcolor, bty="n")
