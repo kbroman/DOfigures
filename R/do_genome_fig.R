@@ -47,6 +47,7 @@ chr_L <- apply(chr_range, 2, diff)
 ind <- 2
 
 pdf("../Figs/do_genome.pdf", width=9.75, height=6.5, pointsize=16)
+par(mar=rep(0.1,4))
 top_gap <- 7.5
 bottom_gap <- 2.5
 plot(0,0,type="n", xlim=c(0.5, 20.5), ylim=c(-bottom_gap, 100+top_gap),
