@@ -2,14 +2,22 @@
 # Diversity Outbreds
 ##############################
 
+black_background <- FALSE # make TRUE if you want a black background
+
 n.lines <- 80
 
 bgcolor <- broman::brocolors("bg")
 color <- qtl2plot::CCcolors
 
 pdf("../Figs/do_cross.pdf", width=9.75, height=6.5, pointsize=16, onefile=TRUE)
-par(mar=rep(0.1,4),las=1,fg="white",col="white",col.axis="white",col.lab="white",
-    bg=bgcolor, bty="n")
+if(black_background) {
+    par(mar=rep(0.1,4),las=1,fg="white",col="white",col.axis="white",col.lab="white",
+        bg=bgcolor, bty="n")
+} else {
+    par(mar=rep(0.1,4),las=1,fg="black",col="black",col.axis="black",col.lab="black",
+        bg="white", bty="n")
+}
+
 plot(0,0,xlim=c(0,864),ylim=c(25,480),xaxt="n",yaxt="n",xlab="",ylab="",type="n")
 
 u <- par("usr")
