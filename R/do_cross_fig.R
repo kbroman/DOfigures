@@ -4,18 +4,21 @@
 
 black_background <- FALSE # make TRUE if you want a black background
 
+# libraries
+library(broman)   # install with install.packages("broman")
+library(qtl2plot) # install with install.packages("qtl2plot", repos="https://rqtl.org/qtl2cran")
+
 n.lines <- 80
 
 bgcolor <- broman::brocolors("bg")
 color <- qtl2plot::CCcolors
 
 pdf("../Figs/do_cross.pdf", width=9.75, height=6.5, pointsize=16)
+par(mar=rep(0.1,4), bty="n")
 if(black_background) {
-    par(mar=rep(0.1,4),las=1,fg="white",col="white",col.axis="white",col.lab="white",
-        bg=bgcolor, bty="n")
+    par(fg="white",col="white",col.axis="white",col.lab="white",bg=bgcolor)
 } else {
-    par(mar=rep(0.1,4),las=1,fg="black",col="black",col.axis="black",col.lab="black",
-        bg="white", bty="n")
+    par(fg="black",col="black",col.axis="black",col.lab="black",bg="white")
 }
 
 plot(0,0,xlim=c(0,864),ylim=c(25,480),xaxt="n",yaxt="n",xlab="",ylab="",type="n")
