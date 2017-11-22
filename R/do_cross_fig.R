@@ -3,6 +3,7 @@
 ##############################
 
 black_background <- FALSE # make TRUE if you want a black background
+black_border <- TRUE # make FALSE if you don't want black borders around the chromosomes
 
 # libraries
 library(broman)   # install with install.packages("broman")
@@ -33,6 +34,12 @@ for(i in 1:8) {
   rect(xloc+20,yloc,xloc+28,yloc-40,col=color[i],border=color[i], lend=1, ljoin=1)
   text(xloc+14,yloc-50,LETTERS[i],adj=c(0.5,1))
 
+  # black border around chromosomes
+  if(black_border) {
+      rect(xloc,yloc,xloc+8,yloc-40,col=NULL,border="black", lend=1, ljoin=1)
+      rect(xloc+20,yloc,xloc+28,yloc-40,col=NULL,border="black", lend=1, ljoin=1)
+  }
+
   xloc <- xloc+38+35+46
 }
 
@@ -49,6 +56,12 @@ for(i in 1:15) {
   g <- c(gen[[wh[i]]][[1]][2,1], gen[[wh[i]]][[2]][2,1])
   rect(xloc,yloc,xloc+8,yloc-40,col=color[g[1]],border=color[g[1]], lend=1, ljoin=1)
   rect(xloc+20,yloc,xloc+28,yloc-40,col=color[g[2]],border=color[g[2]], lend=1, ljoin=1)
+
+  # black border around chromosomes
+  if(black_border) {
+      rect(xloc,yloc,xloc+8,yloc-40,col=NULL,border="black", lend=1, ljoin=1)
+      rect(xloc+20,yloc,xloc+28,yloc-40,col=NULL,border="black", lend=1, ljoin=1)
+  }
 
   xloc <- xloc+(38+35+46)/2
 }
@@ -80,6 +93,12 @@ for(i in 1:15) {
       rect(xxloc[k],yloc-40+temp[1,j]*mult,xxloc[k]+8,yloc-40+temp[1,j-1]*mult,
            col=color[temp[2,j]],border=color[temp[2,j]], lend=1, ljoin=1)
     }
+  }
+
+  # black border around chromosomes
+  if(black_border) {
+      rect(xloc,yloc,xloc+8,yloc-40,col=NULL,border="black", lend=1, ljoin=1)
+      rect(xloc+20,yloc,xloc+28,yloc-40,col=NULL,border="black", lend=1, ljoin=1)
   }
 
   xloc <- xloc+(38+35+46)/2
@@ -114,6 +133,12 @@ for(i in 1:15) {
     }
   }
 
+  # black border around chromosomes
+  if(black_border) {
+      rect(xloc,yloc,xloc+8,yloc-40,col=NULL,border="black", lend=1, ljoin=1)
+      rect(xloc+20,yloc,xloc+28,yloc-40,col=NULL,border="black", lend=1, ljoin=1)
+  }
+
   xloc <- xloc+(38+35+46)/2
 }
 text(u[1],yloc-20,expression(G[10]),adj=c(0,0.5))
@@ -146,6 +171,12 @@ for(i in 1:15) {
     }
   }
 
+  # black border around chromosomes
+  if(black_border) {
+      rect(xloc,yloc,xloc+8,yloc-40,col=NULL,border="black", lend=1, ljoin=1)
+      rect(xloc+20,yloc,xloc+28,yloc-40,col=NULL,border="black", lend=1, ljoin=1)
+  }
+
   xloc <- xloc+(38+35+46)/2
 }
 text(u[1],yloc-20,expression(G[15]),adj=c(0,0.5))
@@ -175,6 +206,12 @@ for(i in 1:15) {
       rect(xxloc[k],yloc-40+temp[1,j]*mult,xxloc[k]+8,yloc-40+temp[1,j-1]*mult,
            col=color[temp[2,j]],border=color[temp[2,j]], lend=1, ljoin=1)
     }
+  }
+
+  # black border around chromosomes
+  if(black_border) {
+      rect(xloc,yloc,xloc+8,yloc-40,col=NULL,border="black", lend=1, ljoin=1)
+      rect(xloc+20,yloc,xloc+28,yloc-40,col=NULL,border="black", lend=1, ljoin=1)
   }
 
   xloc <- xloc+(38+35+46)/2
