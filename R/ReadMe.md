@@ -10,3 +10,6 @@
 
 - [`do_genome_fig.R`](do_genome_fig.R) - illustration of the genome of
   a simulated DO mouse (at G20).
+
+- [`genoprobs_fig.R`](genoprobs_fig.R) - creates a set of 6 figures to
+  illustrate the reconstruction of the DO genotypes
