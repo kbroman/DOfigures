@@ -1,9 +1,12 @@
 # illustration of a DO genome
 
+black_background <- FALSE # make TRUE if you want a black background
+
 # libraries
 library(simcross) # install with devtools::install_github("kbroman/simcross")
 library(qtl)      # install with install.packages("qtl")
-library(qtl2plot)
+library(qtl2plot) # install with install.packages("qtl2plot", repos="https://rqtl.org/qtl2cran")
+library(broman)   # install with install.packages("broman")
 
 n_gen <- 20
 
@@ -47,11 +50,16 @@ chr_L <- apply(chr_range, 2, diff)
 ind <- 2
 
 pdf("../Figs/do_genome.pdf", width=9.75, height=6.5, pointsize=16)
-par(mar=rep(0.1,4))
+par(mar=rep(0.1,4), bty="n")
+if(black_background) {
+    par(fg="white",col="white",col.axis="white",col.lab="white",bg=broman::brocolors("bg"))
+} else {
+    par(fg="black",col="black",col.axis="black",col.lab="black",bg="white")
+}
 top_gap <- 7.5
 bottom_gap <- 2.5
 plot(0,0,type="n", xlim=c(0.5, 20.5), ylim=c(-bottom_gap, 100+top_gap),
-     xaxt="n", yaxt="n", xlab="", ylab="", xaxs="i", yaxs="i", bty="n")
+     xaxt="n", yaxt="n", xlab="", ylab="", xaxs="i", yaxs="i")
 for(i in 1:20) {
     this_L <- 100*chr_L[i]/max(chr_L)
 
